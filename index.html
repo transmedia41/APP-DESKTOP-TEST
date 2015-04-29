@@ -1,0 +1,47 @@
+<!doctype html> <html class="no-js"> <head> <meta charset="utf-8"> <title></title> <meta name="description" content=""> <meta name="viewport" content="width=device-width"> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <link rel="stylesheet" href="styles/bootstrap.7eaf8f8f.css"> <link rel="stylesheet" href="styles/bootstrap-theme.6a07b341.css"> <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> <link rel="stylesheet" href="css/leaflet.extra-markers.css"> <link rel="stylesheet" href="css/leaflet.css"> <link rel="stylesheet" href="css/ngProgress.css">  <body ng-app="deskappApp"> <div ng-show="gameBar" ng-include="'views/headerGame.html'" class="navbar-fixed-top header"></div> <div ng-show="!gameBar" ng-include="'views/headerLogin.html'" class="navbar-fixed-top header"></div> <div ng-show="gameBar" ng-include="'views/navbar.html'" ng-show="true"></div> <!-- Add your site or application content here --> <!--<div class="header">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="#/">deskapp</a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="mainBarController">
+            <ul class="nav navbar-nav">
+              <li><a ng-href="#/">Login</a></li>
+              <li><a ng-href="#/sectors">Sectors</a></li>
+            </ul>
+            <form class="navbar-form navbar-left">
+              <button type="button" class="btn btn-default" ng-click="logoutFunc()">Logout</button>
+            </form>
+            <p class="navbar-text" ng-bind="playerInfos"></p>
+          </div>
+        </div>
+      </div>
+    </div>--> <div ng-view="" id="content"></div> <!--<div class="footer">
+      <div class="container">
+        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+      </div>
+    </div>--> <!-- Google Analytics: change UA-XXXXX-X to be your site's ID --> <!--<script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>--> <script src="scripts/vendor.ffbc03cc.js"></script> <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/circle-progress.js"></script>
+    <script src="js/frontend.js"></script>--> <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script> <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script> <script src="js/angular-round-progress-directive.js"></script> <script src="js/leaflet.extra-markers.js"></script> <!--
+    <script src="js/geolib.js"></script>
+    <script src="js/geolib.elevation.js"></script>
+    <script src="js/map-extend.js"></script>
+--> <script src="js/angular-leaflet-directive.min.js"></script> <script src="scripts/scripts.3c84c891.js"></script>  

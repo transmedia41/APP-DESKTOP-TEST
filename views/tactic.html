@@ -1,0 +1,20 @@
+<div ng-controller="MapSectorCtrl" class="fullpage"> <leaflet id="leafletMap" defaults="defaults" center="mapCenter" geojson="geojson" maxbounds="maxbounds"></leaflet> <!-- Fin contenu --> <footer ng-controller="SectorDashboardCtrl" ng-show="visible"> <div class="navbar navbar-fixed-bottom dashboard-footer"> <div class="col-md-11 col-md-offset-1"> <div class="pannelClose"><!--close--> <button ng-click="closeDashboard()"> <i class="glyphicon glyphicon-remove"></i> </button> </div><!-- \. close --> </div> <div ng-controller="SectorsCtrl" class="col-md-12 mainDaschboard"> <!-- DashboardControll" --> <div class="row contentDashboardRow"> <section class="col-md-offset-1 col-md-1 contentActionLogo"> <span id="actiondetail" class="icon-{{actionSelected.type}} icon-actionlist"></span> </section> <section class="col-md-4 contentDashboard"> <h1>{{actionSelected.name}}</h1> <p>{{actionSelected.description}}</p> </section> <section class="col-md-2 col-md-offset-1"> <table class="table dash_experience"> <tr> <th>XP max <td>{{actionSelected.maxXp}}  <tr> <th>XP min <td>{{actionSelected.accessLevel}}  <tr> <th>Influence prévue <td>{{actionSelected.sectorInfluence - actionSelected.expectedDrop}}%  <tr> <th>baisse <td>{{actionSelected.expectedDrop}}%  <tr> <th>Dispoblie dans <td>{{actionSelected.disponibility}}  </table> </section> <section class="col-md-2 col-md-offset-1 pull-down dash_btn"> <button type="button" class="btn btn-default btn-dash" ng-disabled="!actionSelected.isAvailable" ng-click="makeAction(actionSelected.id)">EFFECTUER</button> </section> </div> <div class="row"> <section class="col-md-offset-1 col-md-1"> <img src="{{sectorSelected.fullLinkImg}}" class="img-responsive img-round" alt="imageMafioso"> </section> <section class="col-md-4"> <h1>{{sectorSelected.nomsquart}}</h1> <p>{{sectorSelected.character.sectorDescription}}</p> </section> <section class="col-md-3 col-md-offset-1"> <div class="dash_influence"> <div ang:round:progress data-round-progress-model="progressInfluence"></div> <div class="influence"> <h1>influence</h1> </div> </div> <div class="dash_secteurs"> <div class="secteur"> <div class="secteur_qte"> <p><i>{{nbActionPerformed}}</i> - {{sectorSelected.nbActions}}</p> </div> <div class="secteur_titre"> <h1>Actions</h1> </div> </div> </div> </section> <!--
+                <section class="col-md-3 col-md-offset-1">
+                    <div class="dash_influence">
+                        <div class="circle_1"></div>
+                        <div class="influence">
+                            <h1>Influence</h1>
+                        </div>
+                    </div>
+                    <div class="dash_secteurs">				
+                        <div class="secteur">
+                            <div class="secteur_qte">
+                                <i>2</i> - 5
+                            </div>
+                            <div class="secteur_titre">
+                                <h1>SECTEUR(S)</h1>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+              --> <section class="col-md-2"> <h1>Liste des actions disponible sur ce secteur</h1> <div class="iconeReturn" ng-repeat="action in sectorSelected.actionsPolygon"> <span class="icon-{{action.type}} icon-actionlist icon-btn active" action-name="{{action.name}}" ng-click="updateActionDescription(action)" ng-class="{orange: !action.isAvailable}"></span> </div> </section> </div> </div> <!-- \. DashboardControll" --> </div> </footer> </div>
